@@ -4,10 +4,10 @@
 
 ## INSTALLATION INSTRUCTIONS
 
-This project uses Python3 for software implementation and RPi3 flashed with the Stretch OS.
-Interface the DHT22 Temperature/Humidity Sensor with the RPi 3, install dependencies (sudo python3 setup.py install) and test an example program. (Connect at GPIO 4 - Pin 7)
-Install the necessary python libraries necessary using the "pip install" command.
-Install pyqt5 and pyqt5-tools using the following commands :
+- This project uses Python3 for software implementation and RPi3 flashed with the Stretch OS.
+- Interface the DHT22 Temperature/Humidity Sensor with the RPi 3, install dependencies (sudo python3 setup.py install) and test an example program. (Connect at GPIO 4 - Pin 7)
+- Install the necessary python libraries necessary using the "pip install" command.
+- Install pyqt5 and pyqt5-tools using the following commands :
   sudo apt-get install qt5-default pyqt5-dev pyqt5-dev-tools
   sudo apt-get install qttools5-dev-tools
 Use the QT Designer tools to generate basic UI - EIDProject1.ui
