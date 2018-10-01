@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+
+# Ui file 'EIDProject1.ui'
+#
+# Created by: PyQt5 Designer
+# Author: Sowmya Ramakrishnan
+#
+# WARNING! All changes made in this file will be lost!
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>DHT22SensorData</class>
