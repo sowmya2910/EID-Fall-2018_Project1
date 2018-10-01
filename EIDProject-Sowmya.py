@@ -5,6 +5,17 @@
 # Created by: PyQt5 UI code generator 5.7
 #
 # WARNING! All changes made in this file will be lost!
+
+# -*- Python3 -*-
+
+# Functions to support UI and for project deliverables
+#
+# Created by: Python Editor on the Raspbian
+# Author: Sowmya Ramakrishnan
+#
+
+#Import files to handle dependencies
+
 import sys
 import time
 import datetime
@@ -12,6 +23,7 @@ import Adafruit_DHT
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 
+#A class for Login Application
 class Login(QtWidgets.QDialog):
     def __init__(self, parent=None):
         super(Login, self).__init__(parent)
@@ -32,18 +44,24 @@ class Login(QtWidgets.QDialog):
             QtWidgets.QMessageBox.warning(
                 self, 'Error', 'Bad user or password')
             
+#A class to open up the Login Window            
 class Window(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super(Window, self).__init__(parent)
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+#Main class got from GUI Main Window, depicting various parts of it and their properties 
 class Ui_DHT22SensorData(object):
+    
+    #Initialization values
     def __init__(self):
         self.temperature=0
         self.humidity=0
         self.thresholdtemperature=30
         self.thresholdhumidity=30
         self.count=0
+        
+    #Auto-generated QT Code for GUI
     def setupUi(self, DHT22SensorData):
         DHT22SensorData.setObjectName("DHT22SensorData")
         DHT22SensorData.resize(515, 388)
@@ -214,11 +232,14 @@ class Ui_DHT22SensorData(object):
         self.label_10.raise_()
         self.label_6.raise_()
         DHT22SensorData.setCentralWidget(self.centralwidget)
+        
+        #Functions to be executed on running the code
         self.retranslateUi(DHT22SensorData)
         self.HumidityPushButton.clicked.connect(self.readanddisplayH)
         self.TemperaturePushButton.clicked.connect(self.readanddisplayT)
         QtCore.QMetaObject.connectSlotsByName(DHT22SensorData)
 
+    #Auto-generated QT Code for GUI - Naming the Boxes
     def retranslateUi(self, DHT22SensorData):
         _translate = QtCore.QCoreApplication.translate
         DHT22SensorData.setWindowTitle(_translate("DHT22SensorData", "DHT22 Sensor Data "))
@@ -235,6 +256,8 @@ class Ui_DHT22SensorData(object):
         self.HumidityPushButton.setText(_translate("DHT22SensorData", "Get Humidity!"))
         self.TemperaturePushButton.setText(_translate("DHT22SensorData", "Get Temperature!"))
         self.label_6.setText(_translate("DHT22SensorData", "Welcome!"))
+        
+    #Function to read and display Humidity on press of Request button, also to take in threshold value from the user, compare with obtained/measured value and send out approriate alarm messages.
     def readanddisplayH(self):
         now=datetime.datetime.now()
         self.Timelabel.setText(now.strftime("%m/%d/%Y %H:%M:%S"))
@@ -251,7 +274,7 @@ class Ui_DHT22SensorData(object):
             else:
                 self.label_10.setText("Safe!")
             
-            
+     #Function to read and display Temperature (in C and F) on press of Request button, also to take in threshold value from the user, compare with obtained/measured value and send out approriate alarm messages.        
     def readanddisplayT(self):
         now=datetime.datetime.now()
         self.Timelabel.setText(now.strftime("%m/%d/%Y %H:%M:%S"))
@@ -272,7 +295,7 @@ class Ui_DHT22SensorData(object):
             else:
                 self.label_9.setText("Safe!")
 
-
+#Main
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
